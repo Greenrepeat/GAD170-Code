@@ -15,7 +15,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    public int xp = 5;
+    public int xpValue = 5;
     public float spinSpeed = 100f;
 
     void Update()
@@ -25,6 +25,13 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter( Collider other )
     {
-        Destroy( this.gameObject );
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<PlayerMovement>().GainXP(xpValue);
+            Destroy(this.gameObject);
+        }
+            
+
+
     }
 }

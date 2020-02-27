@@ -63,10 +63,10 @@ public class PlayerMovement : MonoBehaviour
 
     }
     // function to make the player game xp based on the amount you tell it.
-    void GainXP(int xptoGain)
+    public void GainXP(int xpToGain)
     {
-        xp += xptoGain;
-        Debug.Log("Gained " + xptoGain + " Xp, Current Xp = " + xp + ", XP needed to reach next Level = " + xpForNextLevel);
+        xp += xpToGain;
+        Debug.Log("Gained " + xpToGain + " Xp, Current Xp = " + xp + ", XP needed to reach next Level = " + xpForNextLevel);
     }
     // Update is called once per frame
     void Update()
